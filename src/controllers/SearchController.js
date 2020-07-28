@@ -1,6 +1,7 @@
 const api = require('../services/api')
 const Dev = require('../models/Dev')
 const parseStringAsArray = require('../utils/parseStringAsArray')
+const { response } = require('express')
 
 module.exports = {
   async index(request, response) {
@@ -24,5 +25,6 @@ module.exports = {
       }
     })
 
+    return response.json(devs)
   }
 }
